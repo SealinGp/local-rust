@@ -1,15 +1,12 @@
 fn main() {
-    let s = String::from("abc");
-    takes_ownership(s);
+    let x = Some(5);
+    let y = 10;
 
-    let i: i32 = 1;
-    makes_copy(i);
-}
+    match x {
+        Some(50) => println!("Got 50"),
+        Some(y1) => println!("Matched, y1 = {:?}", y1),
+        _ => println!("Default case, x = {:?}", x),
+    }
 
-fn takes_ownership(s: String) {
-    println!("task_ownership:{}", s)
-}
-
-fn makes_copy(s: i32) {
-    println!("makes_copy:{}", s)
+    println!("at the end: x = {:?}, y = {:?}", x, y);
 }
