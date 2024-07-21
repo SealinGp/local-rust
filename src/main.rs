@@ -1,13 +1,15 @@
 fn main() {
-    greet_world();
+    let s = String::from("abc");
+    takes_ownership(s);
+
+    let i: i32 = 1;
+    makes_copy(i);
 }
 
-fn greet_world() {
-    let southern_germany = "Grüß Gott!";
-    let chinese = "世界，你好";
-    let english = "World, hello";
-    let regions = [southern_germany, chinese, english];
-    for region in regions.iter() {
-        println!("{}", &region)
-    }
+fn takes_ownership(s: String) {
+    println!("task_ownership:{}", s)
+}
+
+fn makes_copy(s: i32) {
+    println!("makes_copy:{}", s)
 }
